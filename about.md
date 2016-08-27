@@ -1,7 +1,8 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: default
+title: About Long Haul
 ---
 
-This is the the right place, but the wrong time. Come back later.
+### About
+
+Right place, but wrong time. Come back later.
