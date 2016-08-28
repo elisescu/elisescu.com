@@ -1,4 +1,5 @@
-### Personal website hosted by github pages, and using https://github.com/biomadeira/sustain.
+### elisescu.com website
+Personal website hosted by github pages, generated with jekyll using https://github.com/biomadeira/sustain.
 
 ### Build
 ```
