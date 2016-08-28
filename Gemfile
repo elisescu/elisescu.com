@@ -1,9 +1,6 @@
-source 'http://rubygems.org'
+source "https://rubygems.org"
 
-gem "jekyll"
-gem "jekyll-paginate"
-gem "susy"
-gem "normalize-scss"
-gem "compass"
-gem "sass"
-gem "support-for"
+gem 'jekyll'
+gem "jekyll-sitemap"
+gem 'rdiscount'
+gem 'pygments.rb', '~> 0.6.3'

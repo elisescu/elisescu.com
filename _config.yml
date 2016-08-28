@@ -1,24 +1,28 @@
-title: Elis Popescu
-description: Elis Popescu's blog
-
-url: http://blog.elisescu.com
-baseurl: ""
-paginate_path: "blog/page:num/"
-permalink: blog/:title/
-
-markdown: kramdown
-highlighter: rouge
-gems: [jekyll-paginate]
+# top level stuff you probably don't need to touch
+highlighter: pygments
+markdown: rdiscount
+rdiscount:
+  extensions: [smart]
+permalink: /:title.html
 paginate: 5
+gems: [jekyll-paginate]
+safe: true
 
-navigation:
- - title: Home
-   url: /index.html
- - title: About
-   url: /about
 
-social:
-   github: elisescu
-   twitter: elisescu
-
+# edit here to achieve your personal greatness
+url: http://blog.elisescu.com/
+baseurl: ""
+title: Bits and pieces
+author: Elis Popescu
+description: Personal blog and resume
+avatar: profile.png
+#email: yourname@email.com
+github: elisescu
+twitter: elisescu
+linkedin: elisescu
+#Comment out if you don't want disqus
 google_analytics: "UA-71598504-4"
+
+
+# needed for travis-ci build
+exclude: [vendor]
