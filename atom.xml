@@ -1,54 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  
-    <title type="text" xml:lang="en">Bits and pieces</title>
-    <link type="application/atom+xml" rel="self" href="http://blog.elisescu.com//atom.xml"/>
-  
-  <link href="http://blog.elisescu.com//"/>
-  <id>http://blog.elisescu.com//</id>
-  <updated>2016-08-28T15:05:04Z</updated>
-  <author>
-    <name>Elis Popescu</name>
-    <email></email>
-  </author>
-  <rights type="text">Copyright © 2016 Elis Popescu. All rights reserved.</rights>
-  
-  <entry>
-  <title type="text">Welcome to Jekyll!</title>
-  <link rel="alternate" type="text/html" href="http://blog.elisescu.com//welcome-to-jekyll.html" />
-  <id>http://blog.elisescu.com//welcome-to-jekyll</id>
-  <published>2016-08-27T20:13:52Z</published>
-  <updated>2016-08-27T20:13:52Z</updated>
-  <content type="html"><![CDATA[ <p>You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code>jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+---
+layout: atom
+---
 
-<p>To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention <code>YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
-
-<p>Jekyll also offers powerful support for code snippets:</p>
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">&quot;Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
-<span class="c1">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span></code></pre></figure></p>
-
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">Hello world</title>
-  <link rel="alternate" type="text/html" href="http://blog.elisescu.com//hello-world.html" />
-  <id>http://blog.elisescu.com//hello-world</id>
-  <published>2016-08-27T00:00:00Z</published>
-  <updated>2016-08-27T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p><p class="intro"><span class="dropcap">H</span>ello world.</p>
-
-<pre><code>pritnf("hello world!\n");
-</code></pre>
- ]]></content>
-</entry>
-
-
-
-</feed>
+{% for post in site.posts limit:10 %}
+  {% include feed-detail.xml %}
+{% endfor %}
