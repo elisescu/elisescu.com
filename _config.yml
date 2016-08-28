@@ -10,7 +10,7 @@ safe: true
 
 
 # edit here to achieve your personal greatness
-url: http://blog.elisescu.com/
+url: http://elisescu.com/
 baseurl: ""
 title: Bits and pieces
 author: Elis Popescu
@@ -27,9 +27,6 @@ google_analytics: "UA-71598504-4"
 # Resume related data
 name: Elis Popescu
 website: elisescu.com
-website_full: http://elisescu.com
-
-google_maps: 'https://www.google.co.uk/maps/place/44+Perth+St,+Edinburgh,+Edinburgh+City+EH3+5BL'
 postcode: 2400
 city: Copenhagen
 country: Denmark
