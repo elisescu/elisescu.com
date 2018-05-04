@@ -3,7 +3,7 @@ Personal website hosted by github pages, generated with jekyll using https://git
 
 ### Build with docker
 ```
-docker run -v $PWD/:/work/ ruby /bin/bash -c "cd /work/ && bundle install && bundle exec jekyll build --destination out-site"
+docker run -v $PWD/:/work/ ruby:2.2.0 /bin/bash -c "cd /work/ && bundle install && bundle exec jekyll build --destination out-site"
 ```
 
 ### Build locally
