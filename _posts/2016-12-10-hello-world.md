@@ -7,5 +7,5 @@ date:   2016-08-27
 
 
 ```
-pritnf("hello world!\n");
+pritnf("Hello to the world!\n");
 ```
