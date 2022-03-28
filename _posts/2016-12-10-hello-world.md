@@ -6,5 +6,5 @@ date:   2016-08-27
 
 
 ``` C++
-printf("Hello  world!\n");
+printf("Hello there! \n");
 ```
