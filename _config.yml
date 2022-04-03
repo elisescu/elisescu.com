@@ -28,4 +28,4 @@ city: Copenhagen
 country: Denmark
 
 # needed for travis-ci build
-exclude: [vendor]
+exclude: [vendor, '_site', 'node_modules']
