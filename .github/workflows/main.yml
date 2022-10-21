@@ -1,54 +1,55 @@
-name: Basic Code Quality checks
+name: Deploy to github pages
 
 on:
-  pull_request:
-    branches: [ "master" ]
+  push:
+    branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+
 jobs:
-  basic-code-checks:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16.13.0
-      - name: Checking for whitespace errors
+      - name: Do everything and even more
         run: |
-          git fetch origin master
-          git diff origin/master --check
-      - name: Checking for code formatting issues
-        run: |
-          pip install black && black --check app tekudo
-          cd frontend && npm install prettier && npm run prettiercheck
-      - name: Checking for Typescript errors
-        run: |
-          cd frontend && node --version
-          npm ci && npm run tscheck
+          git fetch origin master && git checkout origin/master
+          npm ci && npm run export
+          cd out/ && tar --dereference --hard-dereference  -cvf artifact.tar * && zip github-pages artifact.tar
 
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node_version: ['16.13.0']
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+      - name: Upload pages artifacts
+        uses: actions/upload-pages-artifact@main
+        with:
+          path: ./out
+          retention-days: 1
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@main
+      #   with:
+      #     name: github-pages
+      #     path: out/artifact.tar
+      #     retention-days: 1
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: Buildin the code
-        run: |
-          cd frontend && npm ci && npm run build
+  deploy:
+    needs: build
 
-  backend-tests:
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.8.9'
-          architecture: 'x64'
-      - run: |
-          pip install -r requirements.txt && \
-          DATABASE_URL='sqlite:////tmp/test-django.sqlite' ./manage.py test --failfast
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
