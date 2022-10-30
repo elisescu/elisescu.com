@@ -1,6 +1,6 @@
-import Head from "next/head";
-import Layout from "../components/layout";
-import React from "react";
+import Head from 'next/head'
+import Layout from '../components/layout'
+import React from 'react'
 
 export default function Index() {
   return (
@@ -9,5 +9,5 @@ export default function Index() {
         <div></div>
       </Layout>
     </>
-  );
+  )
 }

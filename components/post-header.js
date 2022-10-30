@@ -1,13 +1,13 @@
-import DateFormatter from "../components/date-formatter";
-import CoverImage from "../components/cover-image";
-import PostTitle from "../components/post-title";
+import DateFormatter from '../components/date-formatter'
+import CoverImage from '../components/cover-image'
+import PostTitle from '../components/post-title'
 
 export default function PostHeader({ title, coverImage, date }) {
   return (
     <>
       <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12"></div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
+      <div className="hidden md:mb-12 md:block"></div>
+      <div className="mb-8 sm:mx-0 md:mb-16">
         {coverImage && (
           <CoverImage
             title={title}
@@ -23,5 +23,5 @@ export default function PostHeader({ title, coverImage, date }) {
         </div>
       </div> */}
     </>
-  );
+  )
 }
