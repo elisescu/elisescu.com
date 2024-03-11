@@ -22,7 +22,7 @@ jobs:
           cd out/ && tar --dereference --hard-dereference  -cvf artifact.tar * && zip github-pages artifact.tar
 
       - name: Upload pages artifacts
-        uses: actions/upload-pages-artifact@main
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
           retention-days: 1
@@ -51,4 +51,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
