@@ -14,11 +14,13 @@
     "@next/mdx": "^16.1.6",
     "@types/mdx": "^2.0.13",
     "next": "16.1.6",
+    "posthog-js": "^1.352.0",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
